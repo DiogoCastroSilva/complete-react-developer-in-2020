@@ -4,4 +4,4 @@ Creating a basic app using React. This app show a list of monsters and let's the
 
 # Images
 
-![MockUp](https://github.com/DiogoCastroSilva/complete-react-developer-in-2020/blob/master/monsters-rolodex/images/monsters.png)
+![MockUp](https://raw.githubusercontent.com/DiogoCastroSilva/complete-react-developer-in-2020/master/monsters-rolodex/image/monsters.png)
