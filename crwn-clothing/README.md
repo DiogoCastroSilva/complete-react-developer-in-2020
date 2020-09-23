@@ -1,4 +1,4 @@
-# CRW Clothing
+# CRWN Clothing
 
 This project will use all the information learned in this course.
 
