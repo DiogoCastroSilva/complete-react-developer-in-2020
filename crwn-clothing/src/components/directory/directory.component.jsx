@@ -48,12 +48,10 @@ class Directory extends Component {
     render() {
         return (
             <div className='directory-menu'>
-                {this.state.sessions.map(({ title, imageUrl, id, size }) => (
+                {this.state.sessions.map(({ id, ...otherSectionProps }) => (
                     <MenuItem
                         key={id}
-                        title={title}
-                        imageUrl={imageUrl}
-                        size={size}
+                        {...otherSectionProps}
                     />
                 ))}
             </div>
