@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import './App.css';
 
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 
 import Home from './pages/home/home.component';
 import Shop from './pages/shop/shop.component';
@@ -45,12 +45,26 @@ class App extends Component {
       <Switch>
         <Route exact path='/' component={Home} />
         <Route path='/shop' component={Shop} />
-        <Route path='/signin' component={SignInAndSignUp} />
+        <Route
+          exact
+          path='/signin'
+          render={() => this.props.currentUser ?
+            <Redirect to='/' /> :
+            <SignInAndSignUp />
+          }
+        />
       </Switch>
       </div>
     );
   }
 }
+
+
+const mapStateToProps = ({user}) => {
+  return {
+    currentUser: user.currentUser
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -58,4 +72,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
