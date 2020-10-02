@@ -4,10 +4,14 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 
 import './App.css';
 
+// Pages
 import Home from './pages/home/home.component';
 import Shop from './pages/shop/shop.component';
-import Header from './components/header/header.component';
 import SignInAndSignUp from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
+import Checkout from './pages/checkout/checkout.component';
+
+// Components
+import Header from './components/header/header.component';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
@@ -47,6 +51,7 @@ class App extends Component {
       <Switch>
         <Route exact path='/' component={Home} />
         <Route path='/shop' component={Shop} />
+        <Route exact path='/checkout' component={Checkout} />
         <Route
           exact
           path='/signin'
