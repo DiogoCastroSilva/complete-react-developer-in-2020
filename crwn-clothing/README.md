@@ -1,6 +1,9 @@
 # CRWN Clothing
 
-This project will use all the information learned in this course.
+This project will use all the information learned in this course. Available at:
+
+<br />
+<a></a>
 
 ## Sections
 
