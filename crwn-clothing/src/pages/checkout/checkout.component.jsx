@@ -2,47 +2,54 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import './checkout.styles.scss';
+import {
+    CheckoutContainer,
+    HeaderContainer,
+    HeaderBlockContainer,
+    TotalContainer,
+    TextWarningContainer,
+    StripeButtonContainer
+} from './checkout.styles';
 
 import { selectCartItems, selectorCartTotal } from '../../redux/cart/cart.selectors'
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
-import StripeButton from '../../components/stripe-button/stripe-button.component';
+
 
 const Checkout = ({ cartItems, total }) => (
-    <div className='checkout-page'>
-        <div className='checkout-header'>
-            <div className='header-block'>
+    <CheckoutContainer>
+        <HeaderContainer>
+            <HeaderBlockContainer>
                 <span>Product</span>
-            </div>
-            <div className='header-block'>
+            </HeaderBlockContainer>
+            <HeaderBlockContainer>
                 <span>Description</span>
-            </div>
-            <div className='header-block'>
+            </HeaderBlockContainer>
+            <HeaderBlockContainer>
                 <span>Quantity</span>
-            </div>
-            <div className='header-block'>
+            </HeaderBlockContainer>
+            <HeaderBlockContainer>
                 <span>Price</span>
-            </div>
-            <div className='header-block'>
+            </HeaderBlockContainer>
+            <HeaderBlockContainer>
                 <span>Remove</span>
-            </div>
-        </div>
+            </HeaderBlockContainer>
+        </HeaderContainer>
         {cartItems.map(item => (
             <CheckoutItem
                 key={item.id}
                 item={item}
             />
         ))}
-        <div className='total'>
+        <TotalContainer>
             <span>TOTAL: ${total}</span>
-            <div className='test-warning'>
+            <TextWarningContainer>
                 *Please use the following credic card for payments*
                 <br />
                 4242 4242 4242 4242 - Exp: 01/{(new Date().getFullYear() + 1).toString().substr(-2)} - CVV: 123
-            </div>
-            <StripeButton price={total} />
-        </div>
-    </div>
+            </TextWarningContainer>
+            <StripeButtonContainer price={total} />
+        </TotalContainer>
+    </CheckoutContainer>
 );
 
 const mapStateToProps = createStructuredSelector({
