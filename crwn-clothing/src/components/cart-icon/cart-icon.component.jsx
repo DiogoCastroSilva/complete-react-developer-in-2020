@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import {
-    CartItemContainer,
+    CartIconContainer,
     ShoppingItemContainer,
     ItemCountContainer
 } from './cart-icon.styles';
@@ -11,12 +11,12 @@ import { toggleCartHidden } from '../../redux/cart/cart.actions';
 import { selectCartItemsCount } from '../../redux/cart/cart.selectors';
 
 const CartIcon = ({ toggleCartHidden, itemsCount }) => (
-    <CartItemContainer onClick={toggleCartHidden}>
+    <CartIconContainer onClick={toggleCartHidden}>
         <ShoppingItemContainer />
         <ItemCountContainer>
             {itemsCount}
         </ItemCountContainer>
-    </CartItemContainer>
+    </CartIconContainer>
 );
 
 const mapDispatchToProps = dispatch => {
