@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import CollectionItem from '../../components/collection-item/collection-item.component';
-
 
 
 export const CollectionContainer = styled.div`

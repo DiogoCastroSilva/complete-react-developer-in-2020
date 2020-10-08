@@ -5,8 +5,10 @@ import { selectCollection } from '../../redux/shop/shop.selector';
 import {
     CollectionContainer,
     TitleContainer,
-    ItemsContainer,
+    ItemsContainer
 } from './collection.styles';
+
+import CollectionItem from '../../components/collection-item/collection-item.component';
 
 
 const Collection = ({ collection }) => {
@@ -16,7 +18,7 @@ const Collection = ({ collection }) => {
             <TitleContainer>{ title }</TitleContainer>
             <ItemsContainer>
                 {items.map(item => (
-                    <CollectionItemContainer 
+                    <CollectionItem 
                         key={item.id}
                         item={item}
                     />
