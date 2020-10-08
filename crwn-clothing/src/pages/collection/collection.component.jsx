@@ -6,7 +6,6 @@ import {
     CollectionContainer,
     TitleContainer,
     ItemsContainer,
-    CollectionItemContainer
 } from './collection.styles';
 
 

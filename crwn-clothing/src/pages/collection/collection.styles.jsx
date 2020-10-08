@@ -18,8 +18,8 @@ export const ItemsContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 10px;
-`;
 
-export const CollectionItemContainer = styled(CollectionItem)`
-    margin-bottom: 30px;
+    & > div {
+        margin-bottom: 30px;
+    }
 `;
