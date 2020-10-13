@@ -8,38 +8,53 @@ import Collection from '../collection/collection.component';
 import { convertCollectionSnapshotToMap, firestore } from '../../firebase/firebase.utils';
 import { updateCollections } from '../../redux/shop/shop.actions';
 
+import WithSpinner from '../../components/with-spinner/with-spinner.component';
+
+
+const CollectionOverViewWithSpinner = WithSpinner(CollectionsOverview);
+const CollectionWithSpinner = WithSpinner(Collection);
 
 class Shop extends Component {
-    unsubscribeFromSnapshot = null;
+    state = {
+        isLoading: true
+    };
 
     componentDidMount() {
         const { updateCollections } = this.props;
         const collectionRef = firestore.collection('collections');
 
-        this.unsubscribeFromSnapshot = collectionRef.onSnapshot(async snapshot => {
+        collectionRef.get().then(snapshot => {
             const collectionMap = convertCollectionSnapshotToMap(snapshot);
             updateCollections(collectionMap);
+            this.setState({ isLoading: false });
         });
-    }
-
-    componentWillUnmount() {
-        this.unsubscribeFromSnapshot.unsubscribe();
     }
 
     render() {
         const { match } = this.props;
+        const { isLoading } = this.state;
         return (
-        <div>
-            <Route
-                exact
-                path={`${match.path}`}
-                component={CollectionsOverview}
-            />
-            <Route
-                path={`${match.path}/:collectionId`}
-                component={Collection}
-            />
-        </div>
+            <div>
+                <Route
+                    exact
+                    path={`${match.path}`}
+                    render={(props) =>
+                        <CollectionOverViewWithSpinner
+                            isLoading={isLoading}
+                            {...props}
+                        />
+                    }
+                />
+                <Route
+                    path={`${match.path}/:collectionId`}
+                    render={(props) =>
+                        <CollectionWithSpinner
+                            isLoading={isLoading}
+                            {...props}
+                        />
+                    }
+                />
+            </div>
         );
     }
 };
