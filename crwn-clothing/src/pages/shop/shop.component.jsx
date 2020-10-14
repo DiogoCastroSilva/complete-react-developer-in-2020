@@ -32,7 +32,7 @@ class Shop extends Component {
                     path={`${match.path}`}
                     render={(props) =>
                         <CollectionOverViewWithSpinner
-                            isLoading={!isCollectionLoaded}
+                            isLoading={isCollectionsFetching}
                             {...props}
                         />
                     }
@@ -41,7 +41,7 @@ class Shop extends Component {
                     path={`${match.path}/:collectionId`}
                     render={(props) =>
                         <CollectionWithSpinner
-                            isLoading={isCollectionsFetching}
+                            isLoading={!isCollectionLoaded}
                             {...props}
                         />
                     }
