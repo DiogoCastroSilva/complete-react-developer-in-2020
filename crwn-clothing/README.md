@@ -19,8 +19,7 @@ This project will use all the information learned in this course. Available at:
     <li>Deploying to production</li>
     <li>Using CSS in JS</li>
     <li>HOC (Higher Order Components) pattern</li>
-    <li>Asynchronous Redux</li>
-    <li>Container pattern</li>
+    <li>Using Redux Thunks</li>
     <li>Using Redux Saga</li>
     <li>Using React Hooks</li>
     <li>Using Stripe API - Backend</li>
