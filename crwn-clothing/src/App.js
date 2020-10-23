@@ -13,8 +13,6 @@ import Checkout from './pages/checkout/checkout.component';
 // Components
 import Header from './components/header/header.component';
 
-import { auth, createUserProfileDocument } from './firebase/firebase.utils';
-
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
 
@@ -25,21 +23,19 @@ class App extends Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    const { setCurrentUser, /* collectionsArray */ } = this.props;
-
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-      if (userAuth) {
-        const userRef = await createUserProfileDocument(userAuth);
-        userRef.onSnapshot(snapshot => {
-          setCurrentUser({
-              id: snapshot.id,
-              // displayName, email, createdAt
-              ...snapshot.data()
-          });
-        });
-      } else {
-        setCurrentUser(userAuth);
-      }
+    // this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+    //   if (userAuth) {
+    //     const userRef = await createUserProfileDocument(userAuth);
+    //     userRef.onSnapshot(snapshot => {
+    //       setCurrentUser({
+    //           id: snapshot.id,
+    //           // displayName, email, createdAt
+    //           ...snapshot.data()
+    //       });
+    //     });
+    //   } else {
+    //     setCurrentUser(userAuth);
+    //   }
 
       // Just to add data to firebase
       // addCollectionAndDocuments(
@@ -48,7 +44,7 @@ class App extends Component {
       //     ({ title, items }) => ({ title, items })
       //   )
       // );
-    });
+    // });
   }
 
   componentWillUnmount() {
