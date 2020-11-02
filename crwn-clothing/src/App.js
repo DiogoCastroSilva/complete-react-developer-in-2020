@@ -13,7 +13,6 @@ import Checkout from './pages/checkout/checkout.component';
 // Components
 import Header from './components/header/header.component';
 
-import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
 
 // Used to add data to firebase
@@ -82,10 +81,4 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setCurrentUser: user => dispatch(setCurrentUser(user))
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps)(App);
