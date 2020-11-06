@@ -5,6 +5,8 @@ import { auth, createUserProfileDocument, getCurrentUser, googleProvider } from 
 import {
     signInSuccess,
     signInFailure,
+    signOutSuccess,
+    signOutFailure
 } from "./user.actions";
 
 
@@ -49,12 +51,26 @@ export function* isUserAuthenticathed() {
     }
 }
 
+export function* signOutStart() {
+    try {
+        yield auth.signOut();
+        yield put(signOutSuccess());
+    } catch (error) {
+        yield put(signOutFailure(error));
+    }
+}
+
+
 export function* onGoogleSignInStart() {
     yield takeLatest(UserActionTypes.GOOGLE_SIGN_IN_START, signInWithGoogle);
 }
 
 export function* onEmailSignInStart() {
     yield takeLatest(UserActionTypes.EMAIL_SIGN_IN_START, signInWithEmail);
+}
+
+export function* onSignOutStart() {
+    yield takeLatest(UserActionTypes.SIGN_OUT_START, signOutStart);
 }
 
 export function* onCheckUserSession() {
@@ -65,6 +81,7 @@ export function* userSagas() {
     yield all([
         call(onGoogleSignInStart),
         call(onEmailSignInStart),
-        call(onCheckUserSession)
+        call(onCheckUserSession),
+        call(onSignOutStart)
     ]);
 }

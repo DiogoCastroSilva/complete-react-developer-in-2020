@@ -30,6 +30,25 @@ export const signInFailure = error => {
     };
 }
 
+export const signOutStart = () => {
+    return {
+        type: UserActionTypes.SIGN_OUT_START
+    };
+};
+
+export const signOutSuccess = () => {
+    return {
+        type: UserActionTypes.SIGN_OUT_SUCCESS
+    };
+};
+
+export const signOutFailure = error => {
+    return {
+        type: UserActionTypes.SIGN_OUT_FAILURE,
+        payload: error
+    };
+};
+
 // Persistence
 export const checkUserSession = () => {
     return {
