@@ -9,6 +9,9 @@ const UserActionTypes = {
 
     SIGN_IN_SUCCESS: 'SIGN_IN_SUCCESS',
     SIGN_IN_FAILURE: 'SIGN_IN_FAILURE',
+
+    // Persistence
+    CHECK_USER_SESSION: 'CHECK_USER_SESSION'
 };
 
 export default UserActionTypes;

@@ -29,3 +29,10 @@ export const signInFailure = error => {
         payload: error
     };
 }
+
+// Persistence
+export const checkUserSession = () => {
+    return {
+        type: UserActionTypes.CHECK_USER_SESSION
+    };
+};

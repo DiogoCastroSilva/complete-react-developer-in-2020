@@ -14,12 +14,13 @@ import Checkout from './pages/checkout/checkout.component';
 import Header from './components/header/header.component';
 
 import { selectCurrentUser } from './redux/user/user.selectors';
+import { checkUserSession } from './redux/user/user.actions';
 
 // Used to add data to firebase
 // import { selectCollectionsForPreview } from './redux/shop/shop.selector';
 
 class App extends Component {
-  unsubscribeFromAuth = null;
+  // unsubscribeFromAuth = null;
 
   componentDidMount() {
     // this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
@@ -44,11 +45,14 @@ class App extends Component {
       //   )
       // );
     // });
+
+    const { checkUserSession } = this.props;
+    checkUserSession();
   }
 
-  componentWillUnmount() {
-    this.unsubscribeFromAuth();
-  }
+  // componentWillUnmount() {
+  //   this.unsubscribeFromAuth();
+  // }
 
   render() {
     return (
@@ -76,9 +80,15 @@ class App extends Component {
 const mapStateToProps = state => {
   return {
     currentUser: selectCurrentUser(state)
-    // Just to aadd the data to firebase
+    // Just to add the data to firebase
     // collectionsArray: selectCollectionsForPreview(state)
   };
 };
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch => {
+  return {
+    checkUserSession: () => dispatch(checkUserSession())
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
