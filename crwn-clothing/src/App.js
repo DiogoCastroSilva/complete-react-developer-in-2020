@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
@@ -19,10 +19,10 @@ import { checkUserSession } from './redux/user/user.actions';
 // Used to add data to firebase
 // import { selectCollectionsForPreview } from './redux/shop/shop.selector';
 
-class App extends Component {
+const App = ({ currentUser, checkUserSession }) => {
   // unsubscribeFromAuth = null;
 
-  componentDidMount() {
+  useEffect(() => {
     // this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
     //   if (userAuth) {
     //     const userRef = await createUserProfileDocument(userAuth);
@@ -46,34 +46,31 @@ class App extends Component {
       // );
     // });
 
-    const { checkUserSession } = this.props;
     checkUserSession();
-  }
+  }, [checkUserSession]);
 
   // componentWillUnmount() {
   //   this.unsubscribeFromAuth();
   // }
 
-  render() {
-    return (
-      <div>
-        <Header />
-        <Switch>
-          <Route exact path='/' component={Home} />
-          <Route path='/shop' component={Shop} />
-          <Route exact path='/checkout' component={Checkout} />
-          <Route
-            exact
-            path='/signin'
-            render={() => this.props.currentUser ?
-              <Redirect to='/' /> :
-              <SignInAndSignUp />
-            }
-          />
-        </Switch>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <Header />
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route path='/shop' component={Shop} />
+        <Route exact path='/checkout' component={Checkout} />
+        <Route
+          exact
+          path='/signin'
+          render={() => currentUser ?
+            <Redirect to='/' /> :
+            <SignInAndSignUp />
+          }
+        />
+      </Switch>
+    </div>
+  );
 }
 
 

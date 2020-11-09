@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -15,40 +15,35 @@ import { selectIsCollectionLoaded, selectorCollectionFetching } from '../../redu
 const CollectionOverViewWithSpinner = WithSpinner(CollectionsOverview);
 const CollectionWithSpinner = WithSpinner(Collection);
 
-class Shop extends Component {
+const Shop = ({ match, isCollectionLoaded, isCollectionsFetching, fetchCollectionsStart }) => {
 
-    componentDidMount() {
-        const { fetchCollectionsStart } = this.props;
-        fetchCollectionsStart();       
-    }
+    useEffect(() => {
+        fetchCollectionsStart();   
+    }, [fetchCollectionsStart]);
 
-    render() {
-        const { match, isCollectionsFetching, isCollectionLoaded } = this.props;
-
-        return (
-            <div>
-                <Route
-                    exact
-                    path={`${match.path}`}
-                    render={(props) =>
-                        <CollectionOverViewWithSpinner
-                            isLoading={isCollectionsFetching}
-                            {...props}
-                        />
-                    }
-                />
-                <Route
-                    path={`${match.path}/:collectionId`}
-                    render={(props) =>
-                        <CollectionWithSpinner
-                            isLoading={!isCollectionLoaded}
-                            {...props}
-                        />
-                    }
-                />
-            </div>
-        );
-    }
+    return (
+        <div>
+            <Route
+                exact
+                path={`${match.path}`}
+                render={(props) =>
+                    <CollectionOverViewWithSpinner
+                        isLoading={isCollectionsFetching}
+                        {...props}
+                    />
+                }
+            />
+            <Route
+                path={`${match.path}/:collectionId`}
+                render={(props) =>
+                    <CollectionWithSpinner
+                        isLoading={!isCollectionLoaded}
+                        {...props}
+                    />
+                }
+            />
+        </div>
+    );
 };
 
 

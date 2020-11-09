@@ -11,8 +11,7 @@ import {
 import CollectionItem from '../../components/collection-item/collection-item.component';
 
 
-const Collection = ({ collection }) => {
-    const { title, items } = collection;
+const Collection = ({ collection: { title, items } }) => {
     return (
         <CollectionContainer>
             <TitleContainer>{ title }</TitleContainer>
