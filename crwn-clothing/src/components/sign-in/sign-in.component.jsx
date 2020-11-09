@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import {
@@ -12,77 +12,68 @@ import CustomButton from '../custom-button/custom-button.component';
 
 import { googleSignInStart, emailSignInStart } from '../../redux/user/user.actions';
 
-class SignIn extends Component {
-    constructor(props) {
-        super(props);
+const SignIn = ({ onEmailSignInStart, onGoogleSignInStart }) => {
+    const [credentials, setCredentials] = useState({
+        email: '',
+        password: ''
+    });
 
-        this.state = {
-            email: '',
-            password: ''
-        };
-    }
-
-    handleSubmit = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const { onEmailSignInStart } = this.props;
-        const { email, password } = this.state;
+        const { email, password } = credentials;
 
         onEmailSignInStart(email, password);
     };
 
-    handleChange = (e) => {
+    const handleChange = (e) => {
         const { name, value } = e.target;
 
-        this.setState({
+        setCredentials({
+            ...credentials,
             [name]: value
         });
     };
 
-    render() {
-        const { email, password } = this.state;
-        const { onGoogleSignInStart } = this.props;
+    return (
+        <SignInContainer>
+            <TitleContainer>I alredy have an account</TitleContainer>
+            <span>Sign in with your email and password</span>
 
-        return (
-            <SignInContainer>
-                <TitleContainer>I alredy have an account</TitleContainer>
-                <span>Sign in with your email and password</span>
-
-                <form onSubmit={this.handleSubmit}>
-                    <FormInput
-                        name='email'
-                        type='email'
-                        value={email}
-                        required
-                        handleChange={this.handleChange}
-                        label='email'
-                    />
-                    <FormInput
-                        name='password'
-                        type='password'
-                        value={password}
-                        required
-                        handleChange={this.handleChange}
-                        label='passsword'
-                    />
-                    <ButtonsBarContainer>
-                        <CustomButton
-                            type='submit'
-                        >
-                            Sign in
-                        </CustomButton>
-                        <CustomButton
-                            onClick={onGoogleSignInStart}
-                            color='primary'
-                            type='button'
-                        >
-                            Sign in with Google 
-                        </CustomButton>
-                    </ButtonsBarContainer>
-                </form>
-            </SignInContainer>
-        );
-    }
+            <form onSubmit={handleSubmit}>
+                <FormInput
+                    name='email'
+                    type='email'
+                    value={credentials.email}
+                    required
+                    handleChange={handleChange}
+                    label='email'
+                />
+                <FormInput
+                    name='password'
+                    type='password'
+                    value={credentials.password}
+                    required
+                    handleChange={handleChange}
+                    label='passsword'
+                />
+                <ButtonsBarContainer>
+                    <CustomButton
+                        type='submit'
+                    >
+                        Sign in
+                    </CustomButton>
+                    <CustomButton
+                        onClick={onGoogleSignInStart}
+                        color='primary'
+                        type='button'
+                    >
+                        Sign in with Google 
+                    </CustomButton>
+                </ButtonsBarContainer>
+            </form>
+        </SignInContainer>
+    );
 }
 
 
