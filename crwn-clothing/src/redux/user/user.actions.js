@@ -49,6 +49,34 @@ export const signOutFailure = error => {
     };
 };
 
+export const signUpStart = (email, password, displayName) => {
+    return {
+        type: UserActionTypes.SIGN_UP_START,
+        payload: {
+            email,
+            password,
+            displayName
+        }
+    };
+};
+
+export const signUpSuccess = ({ user, additionalData }) => {
+    return {
+        type: UserActionTypes.SIGN_UP_SUCCESS,
+        payload: {
+            user,
+            additionalData
+        }
+    };
+};
+
+export const signUpFailure = error => {
+    return {
+        type: UserActionTypes.SIGN_UP_FAILURE,
+        payload: error
+    };
+};
+
 // Persistence
 export const checkUserSession = () => {
     return {
