@@ -1,30 +1,30 @@
 # CRWN Clothing
 
-This project will use all the information learned in this course. Available at:
+E-Commerce webpage created using React.
 
-<br />
-<a href="https://crwn-react-clothing-live.herokuapp.com/">CRWN Clothing</a>
+## Index
 
-## Sections
-
-<ol>
-    <li>Setting up the project</li>
-    <li>Using routing with React</li>
-    <li>Using Forms and Components</li>
-    <li>Connecting with Firebase and using authentication</li>
-    <li>Using Redux</li>
-    <li>Adding session and persistence</li>
-    <li>Using state normalization</li>
-    <li>Connecting with Stripe API</li>
+<ul>
+    <li>React Router</li>
+    <li>Firebase</li>
+    <li>Redux</li>
+    <li>Session storage and Persistance</li>
+    <li>State Normalization</li>
+    <li>Stripe Payments</li>
     <li>Deploying to production</li>
-    <li>Using CSS in JS</li>
-    <li>HOC (Higher Order Components) pattern</li>
-    <li>Using Redux Thunks</li>
-    <li>Using Redux Saga</li>
-    <li>Using React Hooks</li>
-    <li>Using Stripe API - Backend</li>
-    <li>Using Context API</li>
-    <li>Using GraphQL + Apolo</li>
-    <li>Mobile support</li>
-    <li>Improving performance</li>
-</ol>
+    <li>CSS in JS - Styled Components</li>
+    <li>HOC Pattern</li>
+    <li>Async Redux</li>
+    <li>Container Pattern</li>
+    <li>Redux Saga</li>
+    <li>React Hooks</li>
+    <li>Stripe server - Back-End</li>
+</ul>
+
+## Images
+
+![Home page](https://raw.githubusercontent.com/DiogoCastroSilva/complete-react-developer-in-2020/master/crwn-clothing/images/home-page.png)
+
+![Category Page](https://raw.githubusercontent.com/DiogoCastroSilva/complete-react-developer-in-2020/master/crwn-clothing/images/category-page.png)
+
+![Sign In / Login Page](https://raw.githubusercontent.com/DiogoCastroSilva/complete-react-developer-in-2020/master/crwn-clothing/images/login-sign-in-page.png)
