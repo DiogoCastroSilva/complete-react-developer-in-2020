@@ -1,17 +1,26 @@
 import React from 'react';
+import { gql } from 'apollo-boost';
 import { Query } from 'react-apollo';
-
-import { GET_CART_HIDDEN } from '../../grapql/resolvers'
 
 import Header from './header.component';
 
 
+const GET_CLIENT_PROPERTIES = gql`
+  {
+    cartHidden @client
+    currentUser @client
+  }
+`;
+
 const HeaderContainer = () => (
-    <Query query={GET_CART_HIDDEN}>
+    <Query query={GET_CLIENT_PROPERTIES}>
         {
             ({ data }) => {
-                const { cartHidden } = data;
-                return <Header hidden={cartHidden} />
+                const { cartHidden, currentUser } = data;
+                return <Header
+                            hidden={cartHidden}
+                            currentUser={currentUser}
+                        />
             }
         }
     </Query>

@@ -18,7 +18,7 @@ const GET_CART_ITEMS = gql`
 `;
 
 
-const CartDropwDownContainer = () => (
+const CartDropwDownContainer = (props) => (
     <Mutation mutation={TOGGLE_CART_HIDDEN}>
         {
             toggleCartHidden => (
@@ -29,6 +29,7 @@ const CartDropwDownContainer = () => (
                             return <CartDropdownComponent
                                     cartItems={cartItems}
                                     toggleCartHidden={toggleCartHidden}
+                                    {...props}
                                 />
                         }
                     }

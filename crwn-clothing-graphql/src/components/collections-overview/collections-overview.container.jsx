@@ -24,7 +24,7 @@ const GET_COLLECTION = gql`
 const CollectionsOverviewContainer = () => (
     <Query query={GET_COLLECTION}>
         {
-            ({ loading, error, data }) => {
+            ({ loading, _, data }) => {
                 if (loading) return <Spinner />;
                 return <CollectionsOverview collections={data.collections} />
             }
