@@ -34,7 +34,9 @@ const client = new ApolloClient({
 // Like redux saves data locally
 client.writeData({
   data: {
-    cartHidden: true
+    cartHidden: true,
+    cartItems: [],
+    itemCount: 0
   }
 });
 

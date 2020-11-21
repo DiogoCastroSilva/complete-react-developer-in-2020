@@ -3,14 +3,15 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
+import './header.styles.scss';
+
 import { auth } from '../../firebase/firebase.utils';
-import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
 
+import { default as CartDropdown } from '../cart-dropdown/cart-dropdown.container';
+import { default as CartIcon } from '../cart-icon/cart-icon.container';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 
-import './header.styles.scss';
-import CartIconContainer from '../cart-icon/cart-icon.container';
 
 const Header = ({ currentUser, hidden }) => (
   <div className='header'>
@@ -33,7 +34,7 @@ const Header = ({ currentUser, hidden }) => (
           SIGN IN
         </Link>
       )}
-      <CartIconContainer />
+      <CartIcon />
     </div>
     {hidden ? null : <CartDropdown />}
   </div>
