@@ -8,17 +8,18 @@ E-Commerce webpage created using React.
     <li>React Router</li>
     <li>Firebase</li>
     <li>Redux</li>
-    <li>Session storage and Persistance</li>
-    <li>State Normalization</li>
-    <li>Stripe Payments</li>
+    <li>Session storage and persistance</li>
+    <li>State normalization</li>
+    <li>Stripe payments</li>
     <li>Deploying to production</li>
     <li>CSS in JS - Styled Components</li>
-    <li>HOC Pattern</li>
+    <li>HOC pattern</li>
     <li>Async Redux</li>
-    <li>Container Pattern</li>
+    <li>Container pattern</li>
     <li>Redux Saga</li>
     <li>React Hooks</li>
     <li>Stripe server - Back-End</li>
+    <li>Mobile support</li>
 </ul>
 
 ## Images

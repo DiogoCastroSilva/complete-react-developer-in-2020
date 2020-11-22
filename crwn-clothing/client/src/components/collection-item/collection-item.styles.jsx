@@ -21,6 +21,20 @@ export const CollectionItemContainer = styled.div`
             display: flex;
         }
     }
+
+    @media screen and (max-width: 800px) {
+        width: 40vw;
+
+        &:hover {
+        .image {
+            opacity: unset;
+        }
+
+        button {
+            opacity: unset;
+        }
+    }
+    }
 `;
 
 export const BackgroundImageContainer = styled.div`
@@ -55,4 +69,11 @@ export const AddToCartButton = styled(CustomButton)`
     position: absolute;
     top: 255px;
     display: none;
+
+    @media screen and (max-width: 800px) {
+        display: block;
+        opacity: 0.9;
+        min-width: unset;
+        padding: 0 10px;
+    }
 `;
