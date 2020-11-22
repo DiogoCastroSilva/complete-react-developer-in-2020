@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy, Suspense } from 'react';
 import { connect } from 'react-redux';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
@@ -7,18 +7,22 @@ import { GlobalStyle } from './global.styles';
 
 // Pages
 import Home from './pages/home/home.component';
-import Shop from './pages/shop/shop.component';
-import SignInAndSignUp from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
-import Checkout from './pages/checkout/checkout.component';
 
 // Components
 import Header from './components/header/header.component';
+import Spinner from './components/spinner/spinner.component';
 
 import { selectCurrentUser } from './redux/user/user.selectors';
 import { checkUserSession } from './redux/user/user.actions';
 
 // Used to add data to firebase
 // import { selectCollectionsForPreview } from './redux/shop/shop.selector';
+
+// Lazy loading components
+const Shop = lazy(() => import('./pages/shop/shop.component'));
+const SignInAndSignUp = lazy(() => import('./pages/sign-in-and-sign-up/sign-in-and-sign-up.component'));
+const Checkout = lazy(() => import('./pages/checkout/checkout.component'));
+
 
 const App = ({ currentUser, checkUserSession }) => {
   // unsubscribeFromAuth = null;
@@ -60,16 +64,18 @@ const App = ({ currentUser, checkUserSession }) => {
       <Header />
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route path='/shop' component={Shop} />
-        <Route exact path='/checkout' component={Checkout} />
-        <Route
-          exact
-          path='/signin'
-          render={() => currentUser ?
-            <Redirect to='/' /> :
-            <SignInAndSignUp />
-          }
-        />
+        <Suspense fallback={<Spinner />}>
+          <Route path='/shop' component={Shop} />
+          <Route exact path='/checkout' component={Checkout} />
+          <Route
+            exact
+            path='/signin'
+            render={() => currentUser ?
+              <Redirect to='/' /> :
+              <SignInAndSignUp />
+            }
+          />
+        </Suspense>
       </Switch>
     </div>
   );

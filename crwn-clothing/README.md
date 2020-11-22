@@ -20,6 +20,7 @@ E-Commerce webpage created using React.
     <li>React Hooks</li>
     <li>Stripe server - Back-End</li>
     <li>Mobile support</li>
+    <li>Improve performance</li>
 </ul>
 
 ## Images
