@@ -21,6 +21,8 @@ E-Commerce webpage created using React.
     <li>Stripe server - Back-End</li>
     <li>Mobile support</li>
     <li>Improve performance</li>
+    <li>PWA (Progressive Web App)</li>
+    <li>Firebase security</li>
 </ul>
 
 ## Images
