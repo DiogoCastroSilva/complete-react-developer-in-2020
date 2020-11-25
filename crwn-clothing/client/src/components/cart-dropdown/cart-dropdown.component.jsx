@@ -1,6 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 
 import {
     CartDropdownContainer, CartItemsContainer,
@@ -9,10 +7,8 @@ import {
 
 import CartItem from '../cart-item/cart-item.component';
 
-import { selectCartItems } from '../../redux/cart/cart.selectors';
-import { toggleCartHidden } from '../../redux/cart/cart.actions';
 
-const CartDropdown = ({ cartItems, history, dispatch }) => (
+const CartDropdown = ({ cartItems, handleClick }) => (
     <CartDropdownContainer>
         <CartItemsContainer>
             {cartItems.length ?
@@ -26,20 +22,11 @@ const CartDropdown = ({ cartItems, history, dispatch }) => (
             }
         </CartItemsContainer>
         <CartDropdownButtonContainer
-            onClick={() => {
-                history.push('/checkout');
-                dispatch(toggleCartHidden());
-            }}
+            onClick={handleClick}
         >
             GO TO CHECKOUT
         </CartDropdownButtonContainer>
     </CartDropdownContainer>
 );
 
-const mapStateToProps = state => {
-    return {
-        cartItems: selectCartItems(state)
-    };
-};
-
-export default withRouter(connect(mapStateToProps)(CartDropdown));
+export default CartDropdown;

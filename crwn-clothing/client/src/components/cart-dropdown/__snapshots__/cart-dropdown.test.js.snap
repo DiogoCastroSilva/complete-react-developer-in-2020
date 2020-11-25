@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing CartDropdown component should render CartDropdown component 1`] = `
+<styled.div>
+  <styled.div>
+    <Memo(CartItem)
+      item={
+        Object {
+          "imageUrl": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-12-pro-family-hero?wid=940&amp;hei=1112&amp;fmt=jpeg&amp;qlt=80&amp;op_usm=0.5,0.5&amp;.v=1604021663000",
+          "name": "Iphone 12 Pro",
+          "price": "1179€",
+          "quantity": 1,
+        }
+      }
+    />
+  </styled.div>
+  <Styled(CustomButton)
+    onClick={[MockFunction]}
+  >
+    GO TO CHECKOUT
+  </Styled(CustomButton)>
+</styled.div>
+`;

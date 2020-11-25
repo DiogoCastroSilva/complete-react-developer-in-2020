@@ -10,13 +10,14 @@ import {
 } from './header.styles';
 
 import { ReactComponent as Logo } from '../../assets/icons/crown.svg'
-import CartIcon from '../cart-icon/cart-icon.component';
-import CartDropdown from '../cart-dropdown/cart-dropdown.component';
+import CartItemContainer from '../../containers/cart-item.container';
+import CartDropdownContainer from '../../containers/cart-dropdown.container';
 
 import { selectCurrentUser } from '../../redux/user/user.selectors';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { createStructuredSelector } from 'reselect';
 import { signOutStart } from '../../redux/user/user.actions';
+
 
 const Header = ({ currentUser, hidden, signOutStart }) => (
     <HeaderContainer>
@@ -50,11 +51,11 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
                     SIGN IN
                 </OptionLink>    
             }
-            <CartIcon />
+            <CartItemContainer />
         </OptionsContainer>
         {hidden ?
             null :
-            <CartDropdown />
+            <CartDropdownContainer />
         }
     </HeaderContainer>
 );
