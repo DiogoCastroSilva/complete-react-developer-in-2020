@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:5000",
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  },
   "dependencies": {
     "axios": "^0.21.0",
     "firebase": "^7.21.1",
@@ -26,6 +31,7 @@
     "@testing-library/user-event": "^7.2.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
+    "enzyme-to-json": "^3.6.1",
     "react-scripts": "3.4.3"
   },
   "scripts": {
