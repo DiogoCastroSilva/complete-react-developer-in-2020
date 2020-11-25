@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing CollectionPreview component should render a CollectionPreview component 1`] = `
+<styled.div>
+  <styled.h1
+    onClick={[Function]}
+  >
+    HATS
+  </styled.h1>
+  <styled.div />
+</styled.div>
+`;
