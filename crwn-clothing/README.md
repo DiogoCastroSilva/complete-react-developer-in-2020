@@ -23,6 +23,7 @@ E-Commerce webpage created using React.
     <li>Improve performance</li>
     <li>PWA (Progressive Web App)</li>
     <li>Firebase security</li>
+    <li>Testing</li>
 </ul>
 
 ## Images
