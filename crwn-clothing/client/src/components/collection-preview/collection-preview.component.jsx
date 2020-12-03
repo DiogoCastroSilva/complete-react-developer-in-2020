@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-import CollectionItem from '../collection-item/collection-item.component';
+import CollectionItemContainer from '../../containers/collection-item.container';
 
 import {
     CollectionPreviewContainer,
@@ -29,7 +29,7 @@ export const CollectionPreview = ({
             {items
                 .filter((item, index) => index < 4)
                 .map(item => (
-                    <CollectionItem
+                    <CollectionItemContainer
                         key={item.id}
                         item={item}
                     />

@@ -8,7 +8,7 @@ import {
     ItemsContainer
 } from './collection.styles';
 
-import CollectionItem from '../../components/collection-item/collection-item.component';
+import CollectionItemContainer from '../../containers/collection-item.container';
 
 
 const Collection = ({ collection: { title, items } }) => {
@@ -17,7 +17,7 @@ const Collection = ({ collection: { title, items } }) => {
             <TitleContainer>{ title }</TitleContainer>
             <ItemsContainer>
                 {items.map(item => (
-                    <CollectionItem 
+                    <CollectionItemContainer 
                         key={item.id}
                         item={item}
                     />

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing CollectionItem component expects to render the CollectionItem component 1`] = `
+<styled.div>
+  <styled.div
+    imageUrl="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-12-pro-family-hero?wid=940&amp;hei=1112&amp;fmt=jpeg&amp;qlt=80&amp;op_usm=0.5,0.5&amp;.v=1604021663000"
+  />
+  <styled.div>
+    <styled.span>
+      Iphone 12 Pro
+    </styled.span>
+    <styled.span>
+      1179€
+    </styled.span>
+  </styled.div>
+  <Styled(CustomButton)
+    color="inverted"
+    onClick={[Function]}
+  >
+    Add To Cart
+  </Styled(CustomButton)>
+</styled.div>
+`;

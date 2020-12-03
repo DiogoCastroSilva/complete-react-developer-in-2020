@@ -4,6 +4,7 @@ import { shallow } from 'enzyme';
 import { CollectionPreview } from './collection-preview.component';
 import CollectionItem from '../collection-item/collection-item.component';
 import { TitleContainer } from './collection-preview.styles';
+import CollectionItemContainer from '../../containers/collection-item.container';
 
 
 describe('testing CollectionPreview component', () => {
@@ -61,6 +62,6 @@ describe('testing CollectionPreview component', () => {
 
         const newWrapper = shallow(<CollectionPreview {...withItemsMockProps} />);
 
-        expect(newWrapper.find(CollectionItem).length).toEqual(withItemsMockProps.items.length);
+        expect(newWrapper.find(CollectionItemContainer).length).toEqual(withItemsMockProps.items.length);
     });
 });
