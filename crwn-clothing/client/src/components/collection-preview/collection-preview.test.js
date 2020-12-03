@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { CollectionPreview } from './collection-preview.component';
-import CollectionItem from '../collection-item/collection-item.component';
 import { TitleContainer } from './collection-preview.styles';
 import CollectionItemContainer from '../../containers/collection-item.container';
 
