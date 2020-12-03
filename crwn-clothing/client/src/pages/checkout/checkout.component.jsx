@@ -12,7 +12,7 @@ import {
 } from './checkout.styles';
 
 import { selectCartItems, selectorCartTotal } from '../../redux/cart/cart.selectors'
-import CheckoutItem from '../../components/checkout-item/checkout-item.component';
+import CheckoutItemContainer from '../../containers/checkout-item.container';
 
 
 const Checkout = ({ cartItems, total }) => (
@@ -35,7 +35,7 @@ const Checkout = ({ cartItems, total }) => (
             </HeaderBlockContainer>
         </HeaderContainer>
         {cartItems.map(item => (
-            <CheckoutItem
+            <CheckoutItemContainer
                 key={item.id}
                 item={item}
             />

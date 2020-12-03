@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import {
     CheckoutItemContainer,
@@ -8,8 +7,6 @@ import {
     QuantityContainer,
     RemoveButtonContainer
 } from './checkout-item.styles';
-
-import { clearItem, removeItem, addItem } from '../../redux/cart/cart.actions';
 
 
 const CheckoutItem = ({ item, removeItem, addItem, clearItem }) => {
@@ -44,12 +41,4 @@ const CheckoutItem = ({ item, removeItem, addItem, clearItem }) => {
     );
 };
 
-const matDispatchToProps = dispatch => {
-    return {
-        removeItem: item => dispatch(removeItem(item)),
-        addItem: item => dispatch(addItem(item)),
-        clearItem: item => dispatch(clearItem(item))
-    }
-};
-
-export default connect(null, matDispatchToProps)(CheckoutItem);
+export default CheckoutItem;
