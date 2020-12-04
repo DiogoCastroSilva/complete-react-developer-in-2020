@@ -9,9 +9,9 @@ import WithSpinner from '../../components/with-spinner/with-spinner.component';
 import { selectIsCollectionLoaded, selectorCollectionFetching } from '../../redux/shop/shop.selector';
 import { fetchCollectionsStart } from '../../redux/shop/shop.actions';
 
-const CollectionsOverview = lazy(() => import('../../components/collections-overview/collections-overview.component'));
+const CollectionsOverviewContainer = lazy(() => import('../../containers/collections-overview.container'));
 const Collection = lazy(() => import('../collection/collection.component'));
-const CollectionOverViewWithSpinner = WithSpinner(CollectionsOverview);
+const CollectionOverviewWithSpinner = WithSpinner(CollectionsOverviewContainer);
 const CollectionWithSpinner = WithSpinner(Collection);
 
 
@@ -28,7 +28,7 @@ const Shop = ({ match, isCollectionLoaded, isCollectionsFetching, fetchCollectio
                     exact
                     path={`${match.path}`}
                     render={(props) =>
-                        <CollectionOverViewWithSpinner
+                        <CollectionOverviewWithSpinner
                             isLoading={isCollectionsFetching}
                             {...props}
                         />

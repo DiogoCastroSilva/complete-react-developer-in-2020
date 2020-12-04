@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing CollectionsOverview component should render a CollectionPreview component 1`] = `
+<styled.div>
+  <withRouter(CollectionPreview)
+    items={Array []}
+    key="1"
+    title="hats"
+  />
+</styled.div>
+`;
