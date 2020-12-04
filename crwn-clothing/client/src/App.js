@@ -9,7 +9,7 @@ import { GlobalStyle } from './global.styles';
 import Home from './pages/home/home.component';
 
 // Components
-import Header from './components/header/header.component';
+import HeaderContainer from './containers/header.container';
 import Spinner from './components/spinner/spinner.component';
 import ErrorBoundary from './components/error-boundary/error-boundary.component';
 
@@ -62,7 +62,7 @@ const App = ({ currentUser, checkUserSession }) => {
   return (
     <div>
       <GlobalStyle />
-      <Header />
+      <HeaderContainer />
       <Switch>
         <Route exact path='/' component={Home} />
         <ErrorBoundary>
