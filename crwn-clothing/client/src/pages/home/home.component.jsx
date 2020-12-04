@@ -2,7 +2,7 @@ import React from 'react';
 
 import { HomePageContainer } from './home.styles';
 
-import DirectoryContainer from '../../container/directory.container';
+import DirectoryContainer from '../../containers/directory.container';
 
 
 const Home = () => (
