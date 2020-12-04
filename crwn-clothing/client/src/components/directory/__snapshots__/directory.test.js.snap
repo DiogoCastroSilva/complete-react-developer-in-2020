@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing Directory component should render a Directory component 1`] = `
+<styled.div>
+  <withRouter(MenuItem)
+    imageUrl="https://i.ibb.co/ZYW3VTp/brown-brim.png"
+    linkUrl="Page"
+    title="Page"
+  />
+</styled.div>
+`;
