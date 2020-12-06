@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing MenuItem component should render a MenuItem component 1`] = `
+<styled.div
+  onClick={[Function]}
+>
+  <styled.div
+    className="background-image"
+    imageUrl="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-12-pro-family-hero?wid=940&amp;hei=1112&amp;fmt=jpeg&amp;qlt=80&amp;op_usm=0.5,0.5&amp;.v=1604021663000"
+  />
+  <styled.div
+    className="content"
+  >
+    <styled.h1>
+      IPHONE
+    </styled.h1>
+    <styled.span>
+      SHOP NOW
+    </styled.span>
+  </styled.div>
+</styled.div>
+`;
