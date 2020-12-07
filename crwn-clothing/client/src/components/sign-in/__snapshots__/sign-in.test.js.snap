@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing SignIn component should render a MenuItem component 1`] = `
+<styled.div>
+  <styled.h2>
+    I alredy have an account
+  </styled.h2>
+  <span>
+    Sign in with your email and password
+  </span>
+  <form
+    onSubmit={[Function]}
+  >
+    <FormInput
+      handleChange={[Function]}
+      label="email"
+      name="email"
+      required={true}
+      type="email"
+      value=""
+    />
+    <FormInput
+      handleChange={[Function]}
+      label="passsword"
+      name="password"
+      required={true}
+      type="password"
+      value=""
+    />
+    <styled.div>
+      <CustomButton
+        type="submit"
+      >
+        Sign in
+      </CustomButton>
+      <CustomButton
+        color="primary"
+        onClick={[MockFunction]}
+        type="button"
+      >
+        Sign in with Google
+      </CustomButton>
+    </styled.div>
+  </form>
+</styled.div>
+`;

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
 
 import {
     SignInContainer,
@@ -10,7 +9,6 @@ import {
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
-import { googleSignInStart, emailSignInStart } from '../../redux/user/user.actions';
 
 const SignIn = ({ onEmailSignInStart, onGoogleSignInStart }) => {
     const [credentials, setCredentials] = useState({
@@ -18,7 +16,7 @@ const SignIn = ({ onEmailSignInStart, onGoogleSignInStart }) => {
         password: ''
     });
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
 
         const { email, password } = credentials;
@@ -76,15 +74,4 @@ const SignIn = ({ onEmailSignInStart, onGoogleSignInStart }) => {
     );
 }
 
-
-const mapDispatchToProps = dispatch => {
-    return {
-        onGoogleSignInStart: () => dispatch(googleSignInStart()),
-        onEmailSignInStart: (email, password) => dispatch(emailSignInStart({
-            email: email,
-            password: password
-        }))
-    };
-};
-
-export default connect(null, mapDispatchToProps)(SignIn);
+export default SignIn;
