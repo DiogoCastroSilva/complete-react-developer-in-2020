@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import SignIn from './sign-in.component';
+import SignUp from './sign-up.component';
 
 
-describe('testing SignIn component', () => {
+describe('testing SignUp component', () => {
     let wrapper;
     let onEmailSignInStart;
     let onGoogleSignInStart;
@@ -18,10 +18,10 @@ describe('testing SignIn component', () => {
             onGoogleSignInStart: onGoogleSignInStart
         };
 
-        wrapper = shallow(<SignIn {...mockProps} />);
+        wrapper = shallow(<SignUp {...mockProps} />);
     });
 
-    it('should render a SignIn component', () => {
+    it('should render a SignUp component', () => {
         expect(wrapper).toMatchSnapshot();
     });
 });
