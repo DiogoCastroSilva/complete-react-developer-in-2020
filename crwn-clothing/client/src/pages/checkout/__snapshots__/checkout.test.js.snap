@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing Checkout component should render a Checkout component 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div>
+      <span>
+        Product
+      </span>
+    </styled.div>
+    <styled.div>
+      <span>
+        Description
+      </span>
+    </styled.div>
+    <styled.div>
+      <span>
+        Quantity
+      </span>
+    </styled.div>
+    <styled.div>
+      <span>
+        Price
+      </span>
+    </styled.div>
+    <styled.div>
+      <span>
+        Remove
+      </span>
+    </styled.div>
+  </styled.div>
+  <styled.div>
+    <span>
+      TOTAL: $
+      0
+    </span>
+    <styled.div>
+      *Please use the following credic card for payments*
+      <br />
+      4242 4242 4242 4242 - Exp: 01/
+      21
+       - CVV: 123
+    </styled.div>
+    <Styled(StripeButton)
+      price={0}
+    />
+  </styled.div>
+</styled.div>
+`;

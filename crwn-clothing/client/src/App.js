@@ -22,7 +22,7 @@ import { checkUserSession } from './redux/user/user.actions';
 // Lazy loading components
 const Shop = lazy(() => import('./pages/shop/shop.component'));
 const SignInAndSignUp = lazy(() => import('./pages/sign-in-and-sign-up/sign-in-and-sign-up.component'));
-const Checkout = lazy(() => import('./pages/checkout/checkout.component'));
+const Checkout = lazy(() => import('./containers/checkout.container'));
 
 
 const App = ({ currentUser, checkUserSession }) => {
