@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`testing SignIn component should render a MenuItem component 1`] = `
+exports[`testing SignIn component should render a SignIn component 1`] = `
 <styled.div>
   <styled.h2>
     I alredy have an account

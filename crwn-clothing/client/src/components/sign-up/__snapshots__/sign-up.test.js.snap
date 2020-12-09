@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing SignUp component should render a SignUp component 1`] = `
+<styled.div>
+  <styled.h2>
+    I don't have an account!
+  </styled.h2>
+  <span>
+    Sign up with your email and password
+  </span>
+  <form
+    onSubmit={[Function]}
+  >
+    <FormInput
+      handleChange={[Function]}
+      label="Display Name"
+      name="displayName"
+      type="text"
+      value=""
+    />
+    <FormInput
+      handleChange={[Function]}
+      label="Email"
+      name="email"
+      type="email"
+      value=""
+    />
+    <FormInput
+      handleChange={[Function]}
+      label="Password"
+      name="password"
+      type="password"
+      value=""
+    />
+    <FormInput
+      handleChange={[Function]}
+      label="Confirm Password"
+      name="confirmPassword"
+      type="password"
+      value=""
+    />
+    <CustomButton
+      type="submit"
+    >
+      SIGN UP
+    </CustomButton>
+  </form>
+</styled.div>
+`;
