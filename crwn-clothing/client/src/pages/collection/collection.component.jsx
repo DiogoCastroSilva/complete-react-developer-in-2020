@@ -1,6 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { selectCollection } from '../../redux/shop/shop.selector';
 
 import {
     CollectionContainer,
@@ -11,26 +9,18 @@ import {
 import CollectionItemContainer from '../../containers/collection-item.container';
 
 
-const Collection = ({ collection: { title, items } }) => {
-    return (
-        <CollectionContainer>
-            <TitleContainer>{ title }</TitleContainer>
-            <ItemsContainer>
-                {items.map(item => (
-                    <CollectionItemContainer 
-                        key={item.id}
-                        item={item}
-                    />
-                ))}
-            </ItemsContainer>
-        </CollectionContainer>
-    );
-}
+const Collection = ({ collection: { title, items } }) => (
+    <CollectionContainer>
+        <TitleContainer>{ title }</TitleContainer>
+        <ItemsContainer>
+            {items.map(item => (
+                <CollectionItemContainer 
+                    key={item.id}
+                    item={item}
+                />
+            ))}
+        </ItemsContainer>
+    </CollectionContainer>
+);
 
-const mapStateToProps = (state, ownProps) => {
-    return {
-        collection: selectCollection(ownProps.match.params.collectionId)(state)
-    };
-};
-
-export default connect(mapStateToProps)(Collection);
+export default Collection;

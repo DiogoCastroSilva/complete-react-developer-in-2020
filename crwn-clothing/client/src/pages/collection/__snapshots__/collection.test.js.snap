@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing Collection component Collection without items should render a Collection component 1`] = `
+<styled.div>
+  <styled.h2>
+    hats
+  </styled.h2>
+  <styled.div />
+</styled.div>
+`;

@@ -10,7 +10,7 @@ import { selectIsCollectionLoaded, selectorCollectionFetching } from '../../redu
 import { fetchCollectionsStart } from '../../redux/shop/shop.actions';
 
 const CollectionsOverviewContainer = lazy(() => import('../../containers/collections-overview.container'));
-const Collection = lazy(() => import('../collection/collection.component'));
+const Collection = lazy(() => import('../../containers/collection.container'));
 const CollectionOverviewWithSpinner = WithSpinner(CollectionsOverviewContainer);
 const CollectionWithSpinner = WithSpinner(Collection);
 
