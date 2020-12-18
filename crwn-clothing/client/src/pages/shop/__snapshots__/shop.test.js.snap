@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing Shop component should render a Shop component 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <Provider
+      store={
+        Object {
+          "dispatch": [Function],
+          "getState": [Function],
+          "persistor": Object {
+            "persist": [Function],
+          },
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+          Symbol(observable): [Function],
+        }
+      }
+    >
+      <Shop
+        fetchCollectionsStart={
+          [MockFunction] {
+            "calls": Array [
+              Array [],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+            ],
+          }
+        }
+        match={
+          Object {
+            "path": "",
+          }
+        }
+      >
+        <div>
+          <Suspense
+            fallback={<Spinner />}
+          >
+            <Route
+              exact={true}
+              path=""
+              render={[Function]}
+            >
+              <Component
+                history={
+                  Object {
+                    "action": "POP",
+                    "block": [Function],
+                    "createHref": [Function],
+                    "go": [Function],
+                    "goBack": [Function],
+                    "goForward": [Function],
+                    "length": 1,
+                    "listen": [Function],
+                    "location": Object {
+                      "hash": "",
+                      "pathname": "/",
+                      "search": "",
+                      "state": undefined,
+                    },
+                    "push": [Function],
+                    "replace": [Function],
+                  }
+                }
+                location={
+                  Object {
+                    "hash": "",
+                    "pathname": "/",
+                    "search": "",
+                    "state": undefined,
+                  }
+                }
+                match={
+                  Object {
+                    "isExact": true,
+                    "params": Object {},
+                    "path": "/",
+                    "url": "/",
+                  }
+                }
+              />
+            </Route>
+            <Route
+              path="/:collectionId"
+              render={[Function]}
+            />
+            <Spinner>
+              <styled.div>
+                <div
+                  className="sc-bdnylx gRtvuV"
+                >
+                  <styled.div>
+                    <div
+                      className="sc-gtssRu hnAUVI"
+                    />
+                  </styled.div>
+                </div>
+              </styled.div>
+            </Spinner>
+          </Suspense>
+        </div>
+      </Shop>
+    </Provider>
+  </Router>
+</BrowserRouter>
+`;
